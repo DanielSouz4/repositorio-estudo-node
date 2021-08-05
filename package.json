@@ -1,0 +1,19 @@
+{
+  "name": "matematica",
+  "version": "1.0.0",
+  "description": "Funções Matemáticas",
+  "main": "endex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielSouz4/repositorio-estudo-node.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielSouz4/repositorio-estudo-node/issues"
+  },
+  "homepage": "https://github.com/DanielSouz4/repositorio-estudo-node#readme"
+}
