@@ -26,7 +26,13 @@ function handleFile(req, res, callBack) {
 function handleRequest(req, res) {
   let path = url.parse(req.url).pathname
 
-  if (path == '/Teste') {
+  let method = req.method
+  console.log(method)
+  if (method == 'PUT') {
+    res.writeHead(404, { 'Content-Type': 'text/html;charset=utf-8' })
+  }
+
+  if (path == '/teste') {
     res.end('Teste')
     return true
   }
