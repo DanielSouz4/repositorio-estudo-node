@@ -12,6 +12,13 @@ app.use('/meusite', express.static(path.join(__dirname, 'client')))
 // __dirname - > colocado no lugar do "."
 // 'client' - > pasta onde está os arq estáticos
 
+app.get('/', (req, res) => {
+  // res.set('Content-Type', 'text/html')
+
+  res.type('json')
+  res.send('<h1>hello world From GET</h1>')
+})
+
 const PORT = 5000
 app.listen(PORT, () => {
   console.log(`Server Running on Port:${PORT}`)
