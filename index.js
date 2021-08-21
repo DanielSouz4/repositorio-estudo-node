@@ -13,10 +13,19 @@ app.use('/meusite', express.static(path.join(__dirname, 'client')))
 // 'client' - > pasta onde está os arq estáticos
 
 app.get('/', (req, res) => {
-  // res.set('Content-Type', 'text/html')
-
-  res.type('json')
   res.send('<h1>hello world From GET</h1>')
+})
+
+app.post('/', (req, res) => {
+  res.send('<h1>hello world From POST</h1>')
+})
+
+app.put('/', (req, res) => {
+  res.send('<h1>hello world From PUT</h1>')
+})
+
+app.delete('/', (req, res) => {
+  res.send('<h1>hello world From DELETE</h1>')
 })
 
 const PORT = 5000
