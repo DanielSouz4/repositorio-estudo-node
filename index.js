@@ -3,7 +3,7 @@ var app = express()
 
 app.get('/', (req, res) => {
   console.log(req)
-  res.send('<h1>Hello World</h1>')
+  res.json({ name: 'Daniel' })
 })
 
 app.listen(3000, () => console.log('Server rodando...'))
