@@ -1,35 +1,9 @@
-const express = require('express')
-const path = require('path')
-// ajudar a montar caminho dos arq
-
-const app = express()
-// app recebe objeto express (criar esse objeto express rodando o construtor)
-
-app.use('/meusite', express.static(path.join(__dirname, 'client')))
-// '/meusite' -> arq apenas servidos quando estiver um /meusite depois do endereço
-// app.use(express.static()) -> p/ servir arq estáticos (primeir. procura o index.html)
-// path.join(__dirname, 'cliente') -> passar o caminho
-// __dirname - > colocado no lugar do "."
-// 'client' - > pasta onde está os arq estáticos
+var express = require('express')
+var app = express()
 
 app.get('/', (req, res) => {
-  res.send('<h1>hello world From GET</h1>')
+  console.log(req)
+  res.send('<h1>Hello World</h1>')
 })
 
-app.post('/', (req, res) => {
-  res.send('<h1>hello world From POST</h1>')
-})
-
-app.put('/', (req, res) => {
-  res.send('<h1>hello world From PUT</h1>')
-})
-
-app.delete('/', (req, res) => {
-  res.send('<h1>hello world From DELETE</h1>')
-})
-
-const PORT = 5000
-app.listen(PORT, () => {
-  console.log(`Server Running on Port:${PORT}`)
-})
-// fazer app excutar requisiçõeas http
+app.listen(3000, () => console.log('Server rodando...'))
