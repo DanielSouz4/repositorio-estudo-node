@@ -1,34 +1,23 @@
 var express = require('express')
 var fs = require('fs')
+const path = require('path')
 var app = express()
 
-let user = {
-  id: 0,
-  name: 'Daniel s',
-  phone: '(222)234-4321'
-}
-
-// fazendo um loop em todas chaves do obj e buscar no tamplate essas chaves substituir pelo valor do obj
-function render(data, obj) {
-  for (let key in obj) {
-    data = data.replace(`{{{${key}}}}`, obj[key])
-  }
-
-  return data
-}
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
 
 app.get('/', (req, res) => {
-  fs.readFile('./template/user.progbr', 'UTF-8', (err, data) => {
-    if (!err) {
-      // replace() retorna uma string com os dados subsituidos
-      data = data.replace('{{{nome}}}', user.name)
-      data = data.replace('{{{telefone}}}', user.phone)
-
-      res.send(render(data, user))
-    }
-  })
+  res.render('user')
 })
 
 app.listen(3000, () => console.log('Server Running on 3000'))
 
-// como modificando um html que será enviado não precisa ser.html
+// configurar:
+// npm install ejs
+// 1 - set qual pasta irão estar os templates (usar path pra ajudar com o caminho)
+// 2 - set qual template que está usando
+
+// usar
+// criar arquivo .ejs na pasta wiews
+// para servir usar res.render('user')
+// render() => p/ renderizar uma view através do template engine
