@@ -7,9 +7,9 @@
     <title>Usuário</title>
   </head>
   <body>
-    <% for(let user of users) {%>
+    <% for(let user of users) {%> <%if(user.id % 2 == 0){%>
     <h1><%=user.name%></h1>
     <h3><%=user.phone%></h3>
-    <%}%>
+    <%}%> <%}%>
   </body>
 </html>

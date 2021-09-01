@@ -10,7 +10,7 @@ let users = [
     phone: '(111)125411'
   },
   {
-    id: 1,
+    id: 4,
     name: 'José',
     phone: '(111)125411'
   },
@@ -30,8 +30,4 @@ app.get('/', (req, res) => {
 
 app.listen(3000, () => console.log('Server Running on 3000'))
 
-// como fazer loop no template engine
-// usar for dentro do html
-
-//(nao coloca o = no for se não quiser apareern na tela)
-//
+// como fazer if no template engine
